@@ -21,7 +21,7 @@ def generate_json(file_name):
                 if is_img:
                     json += "\t\t{\n"
                     json += f'\t\t\t"type": "image",\n'
-                    json += f'\t\t\t"url": "{line[1:]}"\n\t\t}}'
+                    json += f'\t\t\t"url": "{line[1:-1]}"\n\t\t}}'
                     if i == len(lines) - 1:
                         json += "\n"
                     else:

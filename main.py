@@ -60,7 +60,7 @@ def main():
         f.write(json)
 
     with socketserver.TCPServer(("", PORT), handler_object) as httpd:
-        # print("Server started at http://localhost:" + str(PORT))
+        print("Server started at http://localhost:" + str(PORT))
         httpd.serve_forever()
     
 

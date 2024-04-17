@@ -40,7 +40,8 @@ function updateSlide() {
         } else if (slide.type === 'image') {
             const img = document.createElement('img');
             img.src = slide.url;
-            img.style.width = '100%';
+            img.className = 'centered';
+            img.style.height = '800px';
             insert_here.appendChild(img);
         }
     });

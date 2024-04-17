@@ -12,6 +12,7 @@ def generate_json(file_name):
             json = "{\n\t\"slides\": [\n"
             adding_text = False
             for i, line in enumerate(lines):
+                line = line.strip()
                 if line == '' or line == '\n':
                     if adding_text:
                         json += f']\n\t\t}},\n'
@@ -21,7 +22,7 @@ def generate_json(file_name):
                 if is_img:
                     json += "\t\t{\n"
                     json += f'\t\t\t"type": "image",\n'
-                    json += f'\t\t\t"url": "{line[1:-1]}"\n\t\t}}'
+                    json += f'\t\t\t"url": "{line[1:]}"\n\t\t}}'
                     if i == len(lines) - 1:
                         json += "\n"
                     else:

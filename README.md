@@ -26,7 +26,8 @@ made by cameron
 It includes these features:
 - bullet points
 - images
-- simplicity
+- press `i` to invert colors
+- simple presentations
 
 @https://i.imgur.com/r0we4CM.png
 ```

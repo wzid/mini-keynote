@@ -3,16 +3,16 @@
 		{
 			"type": "text",
 			"content": ["mini-keynote"]
-		}
-,		{
+		},
+		{
 			"type": "text",
-			"content": ["made by wzid (cameron)"]
-		}
-,		{
+			"content": ["made by cameron"]
+		},
+		{
 			"type": "text",
-			"content": ["It includes these features:", "- bullet points", "- images", "- simplicity"]
-		}
-,		{
+			"content": ["It includes these features:", "- bullet points", "- images", "- press `i` to invert colors", "- simple presentations"]
+		},
+		{
 			"type": "image",
 			"url": "https://i.imgur.com/r0we4CM.png"
 		}

@@ -17,7 +17,7 @@ This command will install the script in your `/usr/local/bin` directory.
 We assume that your system has `python3` installed at `/opt/homebrew/bin/python3`. You may have to modify the shebang line in the script to point to your python installation.
 
 ```bash
-$ sudo curl -o /usr/local/bin/present https://github.com/wzid/mini-keynote/releases/download/1.0/present-mac.py && sudo chmod +x /usr/local/bin/present
+$ sudo curl -L -o /usr/local/bin/present https://github.com/wzid/mini-keynote/releases/download/1.0/present-mac.py && sudo chmod +x /usr/local/bin/present
 $ present [presentation-file]
 ```
 </details>
@@ -33,7 +33,7 @@ This command will install the script in your `/usr/local/bin` directory.
 We assume that your system has `python3` installed at `/usr/bin/env/python`. You may have to modify the shebang line in the script to point to your python installation.
 
 ```bash
-$ sudo curl -o /usr/local/bin/present https://github.com/wzid/mini-keynote/releases/download/1.0/present-linux.py && sudo chmod +x /usr/local/bin/present
+$ sudo curl -L -o /usr/local/bin/present https://github.com/wzid/mini-keynote/releases/download/1.0/present-linux.py && sudo chmod +x /usr/local/bin/present
 $ present [presentation-file]
 ```
 </details>

@@ -6,7 +6,7 @@ def generate_json(file_name):
         for i, line in enumerate(lines):
             if line == '' or line == '\n':
                 if adding_text:
-                    json += f']\n\t\t}}\n,'
+                    json += f']\n\t\t}},\n'
                     adding_text = False
                 continue
             is_img = line.startswith('@')

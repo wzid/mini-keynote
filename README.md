@@ -3,6 +3,8 @@ A tool to present slides based on a text file. Designed to be simple with few fe
 
 Based off the suckless tool, [sent](https://tools.suckless.org/sent/).
 
+![Showcase of the program](./baseline/showcase.gif)
+
 ## Installation
 
 <details>
@@ -74,6 +76,8 @@ It includes these features:
 - simple presentations
 
 @https://i.imgur.com/r0we4CM.png
+
+the end
 ```
 
 To invert the colors of the slides, press `i`.

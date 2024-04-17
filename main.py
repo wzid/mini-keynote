@@ -45,9 +45,18 @@ class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
         if self.path == '/':
             self.path = 'index.html'
         return http.server.SimpleHTTPRequestHandler.do_GET(self)
+    # This is to suppress the logging of every request to the server
+    def log_message(self, format, *args):
+        if self.server.logging:
+            http.server.SimpleHTTPRequestHandler.log_message(self, format, *args)
+
 
 handler_object = MyHttpRequestHandler
 
+# Custom server to suppress logging
+class MyServer(socketserver.TCPServer):
+    allow_reuse_address = True 
+    logging = False
 
 def main():
     if len(sys.argv) < 2:
@@ -59,9 +68,16 @@ def main():
     with open("slides.json", 'w') as f:
         f.write(json)
 
-    with socketserver.TCPServer(("", PORT), handler_object) as httpd:
+    with MyServer(("", PORT), handler_object) as httpd:
         print("Server started at http://localhost:" + str(PORT))
-        httpd.serve_forever()
+        try:
+            httpd.serve_forever()
+        except KeyboardInterrupt:
+            print("Server stopped.")
+            pass
+        finally:
+            # Close the server
+            httpd.server_close()
     
 
 if __name__ == '__main__':

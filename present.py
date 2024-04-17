@@ -158,6 +158,7 @@ import sys
 import http.server
 import socketserver
 import os
+import webbrowser
 
 PORT = 8000
 
@@ -197,6 +198,7 @@ def main():
 
     with MyServer(("", PORT), handler_object) as httpd:
         print("Server started at http://localhost:" + str(PORT))
+        webbrowser.open("http://localhost:" + str(PORT))
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:

@@ -9,12 +9,20 @@ def generate_json(file_name):
     else:
         with file:
             lines = file.readlines()
+            new_lines = []
+            last = ''
+            for line in lines:
+                if line == last and last == '':
+                    continue
+                new_lines.append(line.strip())
+                last = new_lines[-1]
+            lines = new_lines
+
             json = "{\n\t\"slides\": [\n"
             adding_text = False
             for i, line in enumerate(lines):
-                line = line.strip()
                 if line == '' or line == '\n':
-                    if adding_text:
+                    if adding_text and i != len(lines) - 1:
                         json += f']\n\t\t}},\n'
                         adding_text = False
                     continue
@@ -30,11 +38,11 @@ def generate_json(file_name):
                     adding_text = False
                 else:
                     if adding_text:
-                        json += f', "{line.strip()}"'
+                        json += f', "{line}"'
                     else:
                         json += "\t\t{\n"
                         json += f'\t\t\t"type": "text",\n'
-                        json += f'\t\t\t"content": ["{line.strip()}"'
+                        json += f'\t\t\t"content": ["{line}"'
                         adding_text = True
             if adding_text:
                 json += f']\n\t\t}}\n'
